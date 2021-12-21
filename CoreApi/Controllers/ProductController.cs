@@ -47,7 +47,12 @@ namespace CoreApi.Controllers
         [HttpGet("Products/{productLine}")]
         public async Task<IActionResult> Products(string productLine)
         {
-            return Ok(await _repository.ReadOnlyList<Product>("_Product_" + productLine));
+            productLine = productLine.Replace(" ", "-").ToLower();
+
+            var products = await _repository.ReadOnlyList<Product>("_Product_" + productLine);
+            products = products.Where(x => x.ProductLine.Replace(" ","-").ToLower() == productLine).ToList();
+
+            return Ok(products);
         }
     }
 }
