@@ -26,9 +26,9 @@ namespace CoreApi.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //TODO: REPLACE WITH OWN CONNECTION STRING
-            string connString = System.Environment.GetEnvironmentVariable("MySQLProductConnectionString");
-            //for use on azure in webapp config (not tested with mysql)
-            //string connString = System.Environment.GetEnvironmentVariable("CUSTOMCONNSTR_Product");
+            //string connString = System.Environment.GetEnvironmentVariable("MySQLProductConnectionString");
+            //for use on azure in webapp config 
+            string connString = System.Environment.GetEnvironmentVariable("MYSQLCONNSTR_FreeMySQLHosting");
 
             if (!optionsBuilder.IsConfigured)
             {         
