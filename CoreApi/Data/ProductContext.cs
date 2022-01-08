@@ -28,7 +28,9 @@ namespace CoreApi.Data
             //TODO: REPLACE WITH OWN CONNECTION STRING
             //string connString = System.Environment.GetEnvironmentVariable("MySQLProductConnectionString");
             //for use on azure in webapp config 
-            string connString = System.Environment.GetEnvironmentVariable("MYSQLCONNSTR_FreeMySQLHosting");
+            //string connString = System.Environment.GetEnvironmentVariable("MYSQLCONNSTR_FreeMySQLHosting");
+            string connString = System.Environment.GetEnvironmentVariable("MYSQLCONNSTR_RackNerd");
+
 
             if (!optionsBuilder.IsConfigured)
             {         
